@@ -4,6 +4,8 @@ import { Card } from 'primereact/card';
 import { DataTable } from 'primereact/datatable';
 import { Column } from 'primereact/column';
 import { Button } from 'primereact/button';
+import { InputText } from 'primereact/inputtext';
+import { InputSwitch } from 'primereact/inputswitch';
 
 const propsHeader = {
     icon: 'user',
@@ -32,6 +34,11 @@ const config = {
     ]
 }
 
+const footer = <span>
+                <Button label="Buscar" icon="pi pi-search" style={{marginRight: '5px'}}/>
+                <Button label="Limpar" icon="pi pi-times" className="p-button-secondary"/>
+             </span>;
+
 export default class User extends Component {
 
     state = { ...config }
@@ -44,8 +51,6 @@ export default class User extends Component {
         });
 
         setTimeout(() => {
-
-            const startIndex = event.page + 1;
 
             this.setState({
                 first: event.page,
@@ -70,10 +75,20 @@ export default class User extends Component {
     render() {
         return (
             <Main {...propsHeader}>
-                <Card>
+                <Card footer={footer}>
                     <div className='row'>
-                        <div className='col-6'>xpto</div>
-                        <div className='col-6'>xpto</div>
+                        <div className='col-4'>
+                            <div><label htmlFor="nome">Nome:</label> </div>
+                            <InputText id="nome" value={this.state.value} />
+                        </div>
+                        <div className='col-4'>
+                            <div><label htmlFor="email">E-mail:</label> </div>
+                            <InputText id="email" value={this.state.value} />
+                        </div>
+                        <div className='col-4'>
+                            <div><label htmlFor="ativo">Ativo:</label> </div>
+                            <InputSwitch checked={this.state.active} onChange={(e) => this.setState({active: e.value})} />
+                        </div>
                     </div>
                 </Card>
                 <Card>

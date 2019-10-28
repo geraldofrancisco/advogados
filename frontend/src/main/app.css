@@ -57,3 +57,7 @@ footer.footer{
 .p-button-icon-only{
     margin-left: 5px !important;
 }
+
+.p-inputtext{
+    width: 100%;
+}
