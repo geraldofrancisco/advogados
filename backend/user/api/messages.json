@@ -1,0 +1,10 @@
+{
+    "errors":{
+        "email": "E-mail não informado",
+        "name": "Nome não informado",
+        "password": "Password não informado",
+        "confirmPassword": "Confirmação de password não informado",
+        "passwordsDoNotMatch": "Senhas não conferem",
+        "alreadyRegistered": "Usuários já cadastrados"
+    }
+}
