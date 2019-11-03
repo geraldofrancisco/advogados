@@ -15,7 +15,7 @@ const propsHeader = {
 
 const config = {
     loading: false,
-    rows: 1,
+    rows: 2,
     first: 0,
     totalRecords: 2,
     list: [
