@@ -6,5 +6,8 @@
         "confirmPassword": "Confirmação de password não informado",
         "passwordsDoNotMatch": "Senhas não conferem",
         "alreadyRegistered": "Usuários já cadastrados"
+    },
+    "auth":{
+        "invalidUserAndPassword": "Informe usuário e senha"
     }
 }
