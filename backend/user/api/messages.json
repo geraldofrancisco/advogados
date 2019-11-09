@@ -8,6 +8,8 @@
         "alreadyRegistered": "Usuários já cadastrados"
     },
     "auth":{
-        "invalidUserAndPassword": "Informe usuário e senha"
+        "invalidUserAndPassword": "Informe usuário e senha",
+        "userNotFound": "Usuário não encontrado",
+        "usernameOrPasswordIsInvalid": "Usuário ou senha inválidos"
     }
 }
