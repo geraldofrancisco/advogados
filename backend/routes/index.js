@@ -7,11 +7,10 @@ app.db = db
 consign()
     .include('./config/passport.js')
     .then('./config/middlewares.js')
-    .then('./api/validation.js')
     .then('./api')
     .then('./config/routes.js')
     .into(app)
 
-app.listen(3001, () => {
-    console.log("backend usuario executando ...")
+app.listen(3000, () => {
+    console.log("backend routes executando ...")
 })
