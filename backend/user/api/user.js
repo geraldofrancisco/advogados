@@ -13,7 +13,7 @@ module.exports = app => {
 
         const user = { ...req.body }
         if (req.params.id) user.id = req.params.id
-        
+
         try {
             existsOrError(user.name, messages.errors.name)
             existsOrError(user.email, messages.errors.email)
@@ -54,5 +54,13 @@ module.exports = app => {
             .catch(err => resp.status(500).send(err))
     }
 
-    return { save, get }
+    const passport = (req, resp) => {
+        app.db('users')
+            .select('id')
+            .where({ id: req.params.id })
+            .then(user => resp.json(user))
+            .catch(err => resp.status(500).send(err))
+    }
+
+    return { save, get, passport }
 }
