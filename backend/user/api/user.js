@@ -48,6 +48,7 @@ module.exports = app => {
     }
 
     const get = (req, resp) => {
+        console.log(req.headers)
         app.db('users')
             .select('id', 'name', 'email', 'admin')
             .then(users => resp.json(users))

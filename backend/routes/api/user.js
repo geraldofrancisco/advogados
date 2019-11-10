@@ -7,8 +7,14 @@ module.exports = app => {
 
     const get = (req, resp) => {
         
-        console.log(url)
-        app.axios.get(url)
+        let params = {
+            headers: {
+                Authorization: req.headers.authorization,
+                'Content-Type': 'application/json'
+            }
+        }
+
+        app.axios.get(url, params)
             .then(response => {
                 resp.send(response.data)
             })
