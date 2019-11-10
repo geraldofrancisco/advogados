@@ -11,12 +11,11 @@ module.exports = app => {
     }
 
     const strategy = new Strategy(params, (payload, done) => {
-        //fazer requisição getbyid em users
-        /*app.db('users')
-            .where({ id: payload.user.id })
-            .first()
-            .then(user => done(null, user ? { ...payload } : false))
-            .catch(err => done(err, false))*/
+        app.axios.get(`${app.global.userUrl}/${payload.user.id}`)
+            .then(resp => {
+                done(null, resp.data ? { ...payload } : false)
+            })
+            .catch(err => done(err, false))
     })
 
     passport.use(strategy)

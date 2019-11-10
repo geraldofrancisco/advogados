@@ -1,10 +1,11 @@
 const app = require('express')()
 const consign = require('consign')
-const db = require('./config/db')
+const axios = require('axios')
 
-app.db = db
+app.axios = axios
 
 consign()
+    .then('./global.js')
     .include('./config/passport.js')
     .then('./config/middlewares.js')
     .then('./api')
