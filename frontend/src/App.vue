@@ -1,6 +1,8 @@
 <template>
   <div id="app" :class="{'hide-menu': !isMenuVisible}">
-    <Header title="xpto" :hideToggle="false" />
+    <Header title="Advogados S/A" 
+      :hideToggle="false" 
+      :hideUserDropdown="false" />
     <Menu />
     <Content />
     <Footer />
